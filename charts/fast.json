@@ -1,0 +1,28 @@
+[
+    {
+        "time": 1000,
+        "lane": 0,
+        "type": "tap"
+    },
+    {
+        "time": 1500,
+        "lane": 3,
+        "type": "tap"
+    },
+    {
+        "time": 2000,
+        "lane": 1,
+        "type": "hold",
+        "length": 2000
+    },
+    {
+        "time": 2500,
+        "lane": 2,
+        "type": "tap"
+    },
+    {
+        "time": 3000,
+        "lane": 0,
+        "type": "tap"
+    }
+]
