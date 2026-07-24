@@ -69,6 +69,16 @@ function loop(){
             continue;
         }
 
+        if(n.type==="hold"){
+
+            if(holdKeys[["d","f","j","k"][n.lane]]){
+
+                score+=2;
+
+            }
+
+        }
+
         if(auto && Math.abs(n.y - 610) < 5){
 
             score += 1000;
@@ -107,6 +117,33 @@ function loop(){
 }
 
 function spawnChart(data){
+
+    const div=document.createElement("div");
+
+    div.className="note";
+
+    // ロングノートなら長くする
+    if(data.type==="hold"){
+
+        div.style.height=(data.length/8)+"px";
+        div.style.background="#ff66ff";
+
+    }
+
+    lanes[data.lane].appendChild(div);
+
+    notes.push({
+
+        lane:data.lane,
+        y:-30,
+        element:div,
+
+        type:data.type || "tap",
+        length:data.length || 0
+
+    });
+
+}
 
 const div=document.createElement("div");
 
@@ -204,3 +241,30 @@ const longNotes = [
         length:1200
     }
 ];
+
+let holdKeys={
+    d:false,
+    f:false,
+    j:false,
+    k:false
+};
+
+document.addEventListener("keydown",e=>{
+
+    if(e.key in holdKeys){
+
+        holdKeys[e.key]=true;
+
+    }
+
+});
+
+document.addEventListener("keyup",e=>{
+
+    if(e.key in holdKeys){
+
+        holdKeys[e.key]=false;
+
+    }
+
+});
