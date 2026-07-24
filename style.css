@@ -1,0 +1,100 @@
+body{
+    margin:0;
+    background:#111;
+    color:white;
+    font-family:sans-serif;
+    overflow:hidden;
+}
+
+#title{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:#111;
+}
+
+button{
+    padding:15px 40px;
+    font-size:25px;
+    cursor:pointer;
+}
+
+#game{
+    display:none;
+}
+
+#score{
+    position:absolute;
+    left:20px;
+    top:20px;
+    font-size:30px;
+}
+
+#combo{
+    position:absolute;
+    top:60px;
+    left:20px;
+    font-size:25px;
+}
+
+#lanes{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+}
+
+.lane{
+    width:120px;
+    height:700px;
+    border:2px solid #555;
+    position:relative;
+    background:#222;
+}
+
+.hit{
+    position:absolute;
+    bottom:60px;
+    width:100%;
+    height:8px;
+    background:#00ff99;
+}
+
+.note{
+    position:absolute;
+    width:90px;
+    height:25px;
+    left:15px;
+    background:cyan;
+    border-radius:6px;
+}
+
+.key{
+    position:absolute;
+    bottom:10px;
+    width:100%;
+    text-align:center;
+    font-size:35px;
+}
+
+#lifeBox{
+    position:absolute;
+    top:20px;
+    left:250px;
+    width:350px;
+    height:24px;
+    background:#333;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+#lifeBar{
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg,#00ff66,#00ccff);
+    transition:width .15s;
+}
