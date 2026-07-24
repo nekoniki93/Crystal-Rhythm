@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Rhythm Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="title">
+<h1>🎵 Rhythm Game</h1>
+
+<h2 id="high">High Score : 0</h2>
+<h2>曲を選択</h2>
+
+<button onclick="selectSong(0)">
+シャイニングスター
+</button>
+
+<button onclick="selectSong(1)">
+Fast Beat
+</button>
+
+<button onclick="selectSong(2)">
+12345
+</button>
+
+<button onclick="toggleEditor()">
+譜面エディタ
+</button>
+
+<button onclick="exportChart()">
+譜面を書き出す
+</button>
+
+<input type="file" id="musicFile" accept="audio/*">
+
+<button onclick="loadMusic()">
+🎵 曲を読み込む
+</button>
+
+<button onclick="nextSkin()">
+ノートスキン変更
+</button>
+
+<button onclick="openSettings()">
+⚙️ 設定
+</button>
+
+<div id="settings" style="display:none;">
+    <h2>設定</h2>
+
+    <p>ノート速度</p>
+    <input id="speedSetting" type="range" min="2" max="12" value="5">
+
+    <p>音量</p>
+    <input id="volumeSetting" type="range" min="0" max="100" value="100">
+    <span id="volumeValue">
+    100%
+    </span>
+
+    <br><br>
+
+    <button onclick="closeSettings()">
+    閉じる
+    </button>
+</div>
+
+</div>
+
+<div id="game">
+
+<div id="lifeBox">
+    <div id="lifeBar"></div>
+</div>
+
+<div id="score">
+Score : <span id="scoreValue">0</span>
+</div>
+
+<div id="combo">
+Combo : <span id="comboValue">0</span>
+</div>
+
+<div id="lanes">
+
+<div class="lane">
+<div class="hit"></div>
+<div class="key">D</div>
+</div>
+
+<div class="lane">
+<div class="hit"></div>
+<div class="key">F</div>
+</div>
+
+<div class="lane">
+<div class="hit"></div>
+<div class="key">J</div>
+</div>
+
+<div class="lane">
+<div class="hit"></div>
+<div class="key">K</div>
+</div>
+
+</div>
+
+</div>
+<script src="save.js"></script>
+<script src="audio.js"></script>
+<script src="effect.js"></script>
+<script src="judge.js"></script>
+<script src="game.js"></script>
+<script src="main.js"></script>
+<script src="settings.js"></script>
+<script src="editor.js"></script>
+<script src="achievement.js"></script>
+<script src="skin.js"></script>
+</body>
+</html>
