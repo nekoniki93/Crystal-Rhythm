@@ -161,8 +161,6 @@ element:div
 
 });
 
-}
-
 function spawnNote(){
 
 const lane=Math.floor(Math.random()*4)
