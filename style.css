@@ -71,6 +71,8 @@ button{
     left:15px;
     background:cyan;
     border-radius:6px;
+    box-shadow:0 0 20px cyan;
+    div.style.background="linear-gradient(#ff66ff,#aa00ff)";
 }
 
 .key{
