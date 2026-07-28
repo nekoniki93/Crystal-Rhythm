@@ -181,31 +181,13 @@ function spawnChart(data){
         element:div,
 
         type:data.type || "tap",
-        length:data.length || 0
+        length:data.length || 0,
+
+        holding:false,
+        completed:false
 
     });
-
 }
-
-const div=document.createElement("div");
-
-div.className="note";
-
-lanes[n.lane].appendChild(div);
-
-notes.push({
-
-    lane:data.lane,
-    y:-30,
-    element:div,
-
-    type:data.type || "tap",
-    length:data.length || 0,
-
-    holding:false,
-    completed:false
-
-});
 
 function spawnNote(){
 
