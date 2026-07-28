@@ -153,11 +153,15 @@ lanes[data.lane].appendChild(div);
 
 notes.push({
 
-lane:data.lane,
+    lane:data.lane,
+    y:-30,
+    element:div,
 
-y:-30,
+    type:data.type || "tap",
+    length:data.length || 0,
 
-element:div
+    holding:false,
+    completed:false
 
 });
 
