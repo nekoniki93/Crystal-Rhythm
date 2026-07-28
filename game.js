@@ -47,8 +47,14 @@ function loop(){
     }
 
     for(let i = notes.length - 1; i >= 0; i--){
-
         const n = notes[i];
+
+        console.log(
+            i,
+            n.type,
+            n.y,
+            n.holding
+        );
 
         n.y += noteSpeed;
         n.element.style.top = n.y + "px";
