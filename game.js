@@ -69,48 +69,6 @@ function loop(){
             continue;
         }
 
-        if(n.type==="hold" && n.holding){
-
-            const key=["d","f","j","k"][n.lane];
-
-            if(holdKeys[key]){
-
-                score+=2;
-
-                n.length-=noteSpeed;
-
-                n.element.style.height=(n.length/8)+"px";
-
-                if(n.length<=0){
-
-                    combo++;
-
-                    perfect++;
-
-                    showJudge("HOLD PERFECT","#ff66ff");
-
-                    n.element.remove();
-
-                    notes.splice(i,1);
-
-                }
-
-             }else{
-
-                combo=0;
-
-                miss++;
-
-                showJudge("MISS","#ff4444");
-
-                n.element.remove();
-
-                notes.splice(i,1);
-
-            }
-
-        }
-
         if(n.type==="hold"){
 
             const key=["d","f","j","k"][n.lane];
