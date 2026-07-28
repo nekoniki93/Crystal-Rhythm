@@ -1,3 +1,27 @@
+document.addEventListener("keydown",e=>{
+
+    const key=e.key.toLowerCase();
+
+    if(holdKeys[key]!==undefined){
+
+        holdKeys[key]=true;
+
+    }
+
+});
+
+document.addEventListener("keyup",e=>{
+
+    const key=e.key.toLowerCase();
+
+    if(holdKeys[key]!==undefined){
+
+        holdKeys[key]=false;
+
+    }
+
+});
+
 const keyMap={
 "d":0,
 "f":1,
