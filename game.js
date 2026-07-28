@@ -240,13 +240,6 @@ const longNotes = [
     }
 ];
 
-let holdKeys={
-    d:false,
-    f:false,
-    j:false,
-    k:false
-};
-
 document.addEventListener("keydown",e=>{
 
     if(e.key in holdKeys){
