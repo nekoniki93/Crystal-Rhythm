@@ -103,7 +103,9 @@ function loop(){
                 }
 
                 // 終点まで来た
-                if(n.y>610+n.length/8){
+                const tail = n.y + n.length/8;
+
+                if(tail > 610){
 
                     perfect++;
                     combo++;
