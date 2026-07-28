@@ -178,8 +178,12 @@ function spawnChart(data){
         div.style.height=(data.length/8)+"px";
         div.style.background="#ff66ff";
 
-    }
+        const head=document.createElement("div");
+        head.className="noteHead";
 
+        div.appendChild(head);
+
+    }
     lanes[data.lane].appendChild(div);
 
     notes.push({
