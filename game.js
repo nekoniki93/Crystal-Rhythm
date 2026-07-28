@@ -71,9 +71,51 @@ function loop(){
 
         if(n.type==="hold"){
 
-            if(holdKeys[["d","f","j","k"][n.lane]]){
+            const key=["d","f","j","k"][n.lane];
 
-                score+=2;
+            // 判定ラインで押した
+            if(
+                !n.holding &&
+                holdKeys[key] &&
+                Math.abs(n.y-610)<20
+            ){
+                n.holding=true;
+            }
+
+            // 押し続けている
+            if(n.holding){
+
+                score++;
+
+                // 途中で離した
+                if(!holdKeys[key]){
+
+                    combo=0;
+                    miss++;
+
+                    n.element.remove();
+                    notes.splice(i,1);
+
+                    showJudge("MISS","#ff4444");
+
+                    continue;
+
+                }
+
+                // 終点まで来た
+                if(n.y>610+n.length/8){
+
+                    perfect++;
+                    combo++;
+
+                    n.element.remove();
+                    notes.splice(i,1);
+
+                    showJudge("PERFECT","#ff66ff");
+
+                    continue;
+
+                }
 
             }
 
