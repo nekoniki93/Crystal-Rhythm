@@ -136,8 +136,16 @@ document.addEventListener("keydown",e=>{
 
     }
 
-    target.element.remove();
-    notes.splice(notes.indexOf(target),1);
+    if(target.type==="tap"){
+
+        target.element.remove();
+        notes.splice(notes.indexOf(target),1);
+
+    }else{
+
+        target.holding=true;
+
+    }
 
     document.getElementById("scoreValue").textContent=score;
     document.getElementById("comboValue").textContent=combo;
