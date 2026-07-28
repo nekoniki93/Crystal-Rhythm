@@ -191,7 +191,7 @@ const div=document.createElement("div");
 
 div.className="note";
 
-lanes[data.lane].appendChild(div);
+lanes[n.lane].appendChild(div);
 
 notes.push({
 
