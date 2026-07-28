@@ -49,13 +49,6 @@ function loop(){
     for(let i = notes.length - 1; i >= 0; i--){
         const n = notes[i];
 
-        console.log(
-            i,
-            n.type,
-            n.y,
-            n.holding
-        );
-
         n.y += noteSpeed;
         n.element.style.top = n.y + "px";
 
@@ -90,7 +83,9 @@ function loop(){
 
             // 押し続けている
             if(n.holding){
-
+                
+                n.element.style.filter=
+                "drop-shadow(0 0 15px #ff66ff)";
                 score++;
 
                 // 途中で離した
@@ -120,6 +115,15 @@ function loop(){
                     notes.splice(i,1);
 
                     showJudge("PERFECT","#ff66ff");
+
+                    perfectExplosion();
+
+                    flashLane(n.lane);
+
+                    showJudge(
+                    "HOLD PERFECT",
+                    "#ff66ff"
+                    );
 
                     continue;
 
