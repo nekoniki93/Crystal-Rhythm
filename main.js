@@ -5,6 +5,13 @@ let notes=[]
 let score=0
 let combo=0
 
+let holdKeys={
+    d:false,
+    f:false,
+    j:false,
+    k:false
+};
+
 let noteSpeed=5;
 let paused=false;
 let auto=false
