@@ -171,55 +171,16 @@ function loop(){
 
 function spawnChart(data){
 
-    const div=document.createElement("div");
+    createNote(data);
 
-    div.className="note";
-
-    // ロングノートなら長くする
-    if(data.type==="hold"){
-
-        div.style.height=(data.length/8)+"px";
-        div.style.background="#ff66ff";
-
-        const head=document.createElement("div");
-        head.className="noteHead";
-
-        div.appendChild(head);
-
-    }
-    lanes[data.lane].appendChild(div);
-
-    notes.push({
-
-        lane:data.lane,
-        y:-30,
-        element:div,
-
-        type:data.type || "tap",
-        length:data.length || 0,
-
-        holding:false,
-        completed:false
-
-    });
 }
 
 function spawnNote(){
 
-const lane=Math.floor(Math.random()*4)
-
-const div=document.createElement("div")
-div.className="note"
-
-lanes[lane].appendChild(div)
-
-notes.push({
-
-lane:lane,
-y:-30,
-element:div
-
-})
+    createNote({
+        lane:Math.floor(Math.random()*4),
+        type:"tap"
+    });
 
 }
 
