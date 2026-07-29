@@ -49,8 +49,6 @@ function loop(){
     for(let i = notes.length - 1; i >= 0; i--){
         const n = notes[i];
 
-        n.update();
-
         if(n.y > 700){
 
             n.element.remove();
