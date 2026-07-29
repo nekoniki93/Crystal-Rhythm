@@ -3,8 +3,8 @@ class Note{
     constructor(data){
 
         this.lane = data.lane;
-        this.type = data.type || "tap";
         this.time = data.time;
+        this.type = data.type || "tap";
         this.length = data.length || 0;
 
         this.y = -30;
@@ -12,8 +12,19 @@ class Note{
 
     }
 
-}
+    update(){
 
+        this.y += noteSpeed;
+
+        if(this.element){
+
+            this.element.style.top = this.y + "px";
+
+        }
+
+    }
+
+}
 function createNote(data){
 
     const note = document.createElement("div");
