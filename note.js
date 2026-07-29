@@ -41,7 +41,17 @@ function createNote(data){
 
     lanes[data.lane].appendChild(note);
 
-    const n = new Note(data);
+    let n;
+
+    if(data.type==="hold"){
+
+        n = new HoldNote(data);
+
+    }else{
+
+        n = new TapNote(data);
+
+    }
 
     n.element = note;
 
