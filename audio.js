@@ -136,8 +136,6 @@ async function selectSong(i){
 
     currentSong = songs[i];
 
-    console.log(currentSong);
-
     currentSong.chart = await loadChart(currentSong.chartFile);
 
     startGame();
