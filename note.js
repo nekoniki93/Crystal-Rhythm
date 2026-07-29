@@ -30,18 +30,10 @@ function createNote(data){
 
     lanes[data.lane].appendChild(note);
 
-    notes.push({
+    const n = new Note(data);
 
-        lane:data.lane,
+    n.element = note;
 
-        y:-30,
-
-        type:data.type,
-
-        length:data.length || 0,
-
-        element:note
-
-    });
+    notes.push(n);
 
 }
